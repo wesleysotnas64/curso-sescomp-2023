@@ -14,11 +14,13 @@ public class Player : MonoBehaviour
     private void Joistyck()
     {
         Vector2 direction = new Vector2(0, 0);
+        float   xPosition = transform.position.x;
+        float   yPosition = transform.position.y;
 
-        if(Input.GetKey("w")) direction += Vector2.up;
-        if(Input.GetKey("s")) direction += Vector2.down;
-        if(Input.GetKey("a")) direction += Vector2.left;
-        if(Input.GetKey("d")) direction += Vector2.right;
+        if(Input.GetKey("w") && yPosition <  2.25f) direction += Vector2.up;
+        if(Input.GetKey("s") && yPosition > -2.25f) direction += Vector2.down;
+        if(Input.GetKey("a") && xPosition > -5.25f) direction += Vector2.left;
+        if(Input.GetKey("d") && xPosition <  5.25f) direction += Vector2.right;
 
         if(Input.GetMouseButtonDown(0)) CastFireball();
 
@@ -29,7 +31,7 @@ public class Player : MonoBehaviour
     }
 
     private void move(Vector2 vec)
-    {
+    {   
         transform.Translate(vec.x, vec.y, 0);
     }
 

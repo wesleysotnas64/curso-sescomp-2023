@@ -27,4 +27,8 @@ public class Enemy : MonoBehaviour
     {
         transform.Translate(vec.x, vec.y, 0);
     }
+
+    private void OnCollisionEnter2D(Collision2D other) {
+        Destroy(gameObject);
+    }
 }
