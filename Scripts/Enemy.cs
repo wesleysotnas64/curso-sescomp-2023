@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
+        player = GameObject.Find("Player");
         move(PlayerDirection());
     }
 
