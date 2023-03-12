@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -53,5 +54,9 @@ public class Player : MonoBehaviour
         );
 
         return newDirection.normalized;
+    }
+
+    private void OnCollisionEnter2D(Collision2D other) {
+        SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
     }
 }

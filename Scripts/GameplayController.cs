@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameplayController : MonoBehaviour
 {
@@ -37,6 +38,8 @@ public class GameplayController : MonoBehaviour
     private void RunTime()
     {
         currentTime -= Time.deltaTime;
+        if(currentTime <= 0)
+            SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
     }
 
     private void UpdateUI()
