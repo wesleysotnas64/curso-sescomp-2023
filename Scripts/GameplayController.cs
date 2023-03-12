@@ -24,6 +24,14 @@ public class GameplayController : MonoBehaviour
         currentScore++;
     }
 
+    public void SaveData()
+    {
+        PlayerPrefs.SetInt("Score", currentScore);
+
+        if(currentScore > PlayerPrefs.GetInt("HighScore"))
+            PlayerPrefs.SetInt("HighScore", currentScore);
+    }
+
     private void RunTime()
     {
         currentTime -= Time.deltaTime;
@@ -34,4 +42,5 @@ public class GameplayController : MonoBehaviour
         txtTime.text  = "Time: " + ((int)currentTime).ToString();
         txtScore.text = "Score: " + currentScore.ToString();
     }
+
 }
