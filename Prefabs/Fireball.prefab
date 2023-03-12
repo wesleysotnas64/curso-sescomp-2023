@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6453349360843826952}
   - component: {fileID: 876926624}
   - component: {fileID: 876926625}
+  - component: {fileID: 2816418619560174375}
   m_Layer: 7
   m_Name: Fireball
   m_TagString: Fireball
@@ -139,3 +140,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.25}
   serializedVersion: 2
   m_Radius: 0.18
+--- !u!95 &2816418619560174375
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6453349360843827189}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fb0514c58cc15ba4e8fd4f8ba1579e76, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
