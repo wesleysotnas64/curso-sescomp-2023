@@ -18,6 +18,7 @@ public class GameplayController : MonoBehaviour
     {
         RunTime();
         UpdateUI();
+        FollowPlayer();
     }
 
     public void ToScore()
@@ -46,6 +47,16 @@ public class GameplayController : MonoBehaviour
     {
         txtTime.text  = "Time: " + ((int)currentTime).ToString();
         txtScore.text = "Score: " + currentScore.ToString();
+    }
+
+    private void FollowPlayer()
+    {
+        Vector2 playerPosition = GameObject.Find("Player").GetComponent<Transform>().position;
+        Vector2 camPosition = transform.position;
+
+        Vector2 currentPosition = Vector2.Lerp(camPosition, playerPosition, Time.deltaTime);
+
+        transform.position = new Vector3(currentPosition.x, currentPosition.y, -10);
     }
 
 }
