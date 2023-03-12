@@ -22,6 +22,8 @@ public class GameplayController : MonoBehaviour
     public void ToScore()
     {
         currentScore++;
+
+        SaveData();
     }
 
     public void SaveData()
