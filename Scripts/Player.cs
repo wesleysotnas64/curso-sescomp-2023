@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
 
     private void Update() {
         Joistyck();
+        FlipSprite();
     }
 
     private void Joistyck()
@@ -58,5 +59,14 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other) {
         SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+    }
+
+    private void FlipSprite()
+    {
+        float xDirection  = MouseDirection().x;
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+
+        if (xDirection < 0) sr.flipX = true;
+        else sr.flipX = false;
     }
 }

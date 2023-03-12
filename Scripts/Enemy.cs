@@ -6,10 +6,14 @@ public class Enemy : MonoBehaviour
 
     public GameObject player;
 
+    private void Start() {
+        player = GameObject.Find("Player");
+    }
+
     void Update()
     {
-        player = GameObject.Find("Player");
         move(PlayerDirection());
+        FlipSprite();
     }
 
     private Vector2 PlayerDirection()
@@ -32,5 +36,14 @@ public class Enemy : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other) {
         GameObject.Find("MainCamera").GetComponent<GameplayController>().ToScore();
         Destroy(gameObject);
+    }
+
+    private void FlipSprite()
+    {
+        float xDirection  = PlayerDirection().x;
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+
+        if (xDirection < 0) sr.flipX = false;
+        else sr.flipX = true;
     }
 }
